@@ -1,0 +1,6 @@
+# add this into your configuration file, do not copy and replace!
+
+group: !include groups.yaml
+scene: !include scenes.yaml
+automation: !include automation.yaml
+script: !include scripts.yaml
