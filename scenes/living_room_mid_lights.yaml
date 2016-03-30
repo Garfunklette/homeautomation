@@ -1,0 +1,5 @@
+name: living_room_mid_lights
+    entities:
+      light.Living_room:
+        state: on
+        brightness: 120
