@@ -2,10 +2,10 @@
 chrome_pause_stop_lights_evening:
   alias: Chrome Stop Lights Up Evening
   sequence:
-    - alias: Living room lights to mid-high
+    - alias: Living room lights to mid
       service: scene.turn_on
       data:
-        entity_id: scene.living_room_mid_high_lights
+        entity_id: scene.living_room_mid_lights
     - delay:
         minutes: 2
     - alias: Living room lights to high
