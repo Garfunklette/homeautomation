@@ -2,4 +2,4 @@ name: living_room_low_lights
     entities:
       light.Living_room:
         state: on
-        brightness: 190
+        brightness: 180
