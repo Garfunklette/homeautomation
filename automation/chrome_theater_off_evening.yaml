@@ -19,6 +19,6 @@
 
 # chromecast pause, lights are off, and it is evening
 
-alias: Turn lights up when ChromeCast pauses or stops, evening
+alias: 'Turn lights up when ChromeCast pauses or stops, evening'
 trigger:
   
