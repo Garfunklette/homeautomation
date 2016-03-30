@@ -5,6 +5,8 @@
 # good night lights (transition after 8:00 to 9:15 to lower brightness on work nights)
 # cloudy day lights (
 # weather indicator light (orange for nice out, green for cold, blue for rain, pink for snow)
+# lights out when everyone gone
+# timed lights when on vacation
 
 # Example:
 # - !include automation/sleep.yaml
