@@ -1,4 +1,4 @@
--!include living_room_low_lights.yaml
--!include living_room_mid_lights.yaml
--!include living_room_mid_high_lights.yaml
--!include living_room_high_lights.yaml
+-!include scenes/living_room_low_lights.yaml
+-!include scenes/living_room_mid_lights.yaml
+-!include scenes/living_room_mid_high_lights.yaml
+-!include scenes/living_room_high_lights.yaml
