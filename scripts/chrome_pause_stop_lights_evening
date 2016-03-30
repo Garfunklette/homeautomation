@@ -1,0 +1,14 @@
+# lights up when stopping Chrome, evening time
+chrome_pause_stop_lights_evening:
+  alias: Chrome Stop Lights Up Evening
+  sequence:
+    - alias: Living room lights to mid-high
+      service: scene.turn_on
+      data:
+        entity_id: scene.living_room_mid_high_lights
+    - delay:
+        minutes: 2
+    - alias: Living room lights to high
+      service: scene.turn_on
+      data:
+        entity_id: scene.living_room_high_lights
