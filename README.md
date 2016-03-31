@@ -1,2 +1,4 @@
 # homeautomation
-A collection of automations using home assistant io
+my home automation via home assistant io
+
+uses Philips Hue lights, forecast io, and nmaps
