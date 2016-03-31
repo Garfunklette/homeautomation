@@ -1,25 +1,33 @@
 Home:
+  view: yes
+  entities:
     - group.living_room
     - group.bedroom
     - group.office
     - group.kitchen
-  living_room:
+living_room:
+  name: 'Living Room'
+  entities:
     - light.living_room
     - light.lamp_mid
     - light.lamp_bottom
     - light.endtable
-  bedroom:
+bedroom:
+  name: 'Bedroom'
+  entities:
     - light.color_reading
     - light.color_tall
-  office:
+office:
+  name: Office
+  entities:
     - light.office_white
     - light.lamp_mid
     - light.lamp_bottom
   #kitchen:
-  Extended weather:
-    - sensor.weather_icon
-    - sensor.weather_apparent_temperature
-    - sensor.weather_nearest_storm_distance
-    - sensor.weather_precip
-    - sensor.weather_precip_probability
-    - sensor.weather_wind_speed
+Extended weather:
+  - sensor.weather_icon
+  - sensor.weather_apparent_temperature
+  - sensor.weather_nearest_storm_distance
+  - sensor.weather_precip
+  - sensor.weather_precip_probability
+  - sensor.weather_wind_speed
