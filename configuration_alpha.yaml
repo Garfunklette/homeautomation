@@ -1,0 +1,202 @@
+homeassistant:
+
+  latitude: #
+  longitude: #
+
+  # C for Celcius, F for Fahrenheit
+  temperature_unit: F
+
+  # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+  time_zone: #
+
+  # Name of the location where Home Assistant is running
+  name: Home
+
+group: !include groups.yaml
+scene: !include scenes.yaml
+script: !include scripts.yaml
+
+
+light:
+  platform: hue
+  host: #
+
+# Allows you to issue voice commands from the frontend
+conversation:
+
+zone:
+  icon: mdi:crown
+
+device_tracker:
+  platform: nmap_tracker
+  hosts: #
+  interval_seconds: 30
+  home_interval: 10
+
+
+# Show links to resources in log and frontend
+introduction:
+
+# Discover some devices automatically
+discovery:
+
+# Enables the frontend
+frontend:
+
+# Enables support for tracking state changes over time.
+history:
+
+# Checks for available updates
+updater:
+
+# View all events in a logbook
+logbook:
+
+# Track the sun
+sun:
+
+media_player:
+  platform: cast
+  host: #
+
+sensor:
+  platform: forecast
+  api_key: #
+  monitored_conditions:
+    - summary
+    - icon
+    - nearest_storm_distance
+    #- nearest_storm_bearing
+    - precip_type
+    #- precip_intensity
+    - precip_probability
+    - temperature
+    - apparent_temperature
+    #- dew_point
+    - wind_speed
+    #- wind_bearing
+    #- cloud_cover
+    #- humidity
+    #- pressure
+    #- visibility
+    #- ozone
+
+# Lighting Automations
+automation:
+  alias: 'Rainy Day'
+
+  trigger:
+       - platform: state
+         entity_id: sensor.weather_precip
+         state: 'rain'
+       - platform: state
+         entity_id: group.all_devices
+         state: 'home'
+       - platform: time
+         after: '14:00'
+         before: '23:00'
+
+  condition: use_trigger_values
+
+  action:
+    service: light.turn_on
+    entity_id: light.living_room
+
+
+automation 2:
+  alias: 'Rain is over'
+  trigger:
+       - platform: state
+         entity_id: sensor.weather_precip
+         state: 'None'
+       - platform: sun
+         event: 'sunset'
+         offset: '-01:00:00'
+
+  condition: use_trigger_values
+  action:
+    service: light.turn_off
+    entity_id: light.living_room
+
+automation 3:
+  alias: 'Office Light on'
+  trigger:
+       - platform: sun
+         event: 'sunset'
+         offset: '-01:00:00' 
+       - platform: state
+         entity_id: group.all_devices
+         state: 'home'
+
+  condition: use_trigger_values
+
+  action:
+    service: light.turn_on
+    entity_id: light.office_white
+
+automation 4:
+  alias: 'Office Light off'
+  trigger:
+       - platform: sun
+         event: 'sunrise'
+         offset: '03:00:00' 
+       - platform: state
+         entity_id: group.all_devices
+         state: 'home'
+
+  condition: use_trigger_values
+
+  action:
+    service: light.turn_off
+    entity_id: light.office_white
+
+automation 5:
+  alias: 'Nightlight'
+
+  trigger:
+       - platform: state
+         entity_id: group.all_devices
+         state: 'home'
+       - platform: time
+         after: '20:00'
+         before: '02:00'
+         weekday:
+           - fri
+           - sat
+
+  condition: use_trigger_values
+
+  action:
+    service: light.turn_on
+    entity_id: light.living_room
+    data:
+      brightness: 50
+      rgb_color: [255, 0, 0]
+
+automation 6:
+  alias: "Set dim level daytime"
+  trigger:
+  - platform: time
+    after: "07:00"   #instantaneously at 7am only, not 'after'
+  - platform: state   #implicit OR betwen the two conditions
+    entity_id: light.office_white
+    from: 'off'
+    to: 'on'
+
+  condition:
+  - platform: state
+    entity_id: light.office_white
+    state: 'on'
+  - platform: time    #implicit AND
+    after: "07:00"
+    before: "19:59"
+
+  action:
+    service: light.turn_on
+    entity_id: light.office_white
+    data:
+      brightness: 255
+
+http:
+  api_password: #
+  
