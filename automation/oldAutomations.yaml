@@ -1,0 +1,115 @@
+# Lighting Automations
+automation:
+  alias: 'Rainy Day'
+
+  trigger:
+       - platform: state
+         entity_id: sensor.weather_precip
+         state: 'rain'
+       - platform: state
+         entity_id: group.all_devices
+         state: 'home'
+       - platform: time
+         after: '14:00'
+         before: '23:00'
+
+  condition: use_trigger_values
+
+  action:
+    service: light.turn_on
+    entity_id: light.living_room
+
+
+automation 2:
+  alias: 'Rain is over'
+  trigger:
+       - platform: state
+         entity_id: sensor.weather_precip
+         state: 'None'
+       - platform: sun
+         event: 'sunset'
+         offset: '-01:00:00'
+
+  condition: use_trigger_values
+  action:
+    service: light.turn_off
+    entity_id: light.living_room
+
+automation 3:
+  alias: 'Office Light on'
+  trigger:
+       - platform: sun
+         event: 'sunset'
+         offset: '-01:00:00' 
+       - platform: state
+         entity_id: group.all_devices
+         state: 'home'
+
+  condition: use_trigger_values
+
+  action:
+    service: light.turn_on
+    entity_id: light.office_white
+
+automation 4:
+  alias: 'Office Light off'
+  trigger:
+       - platform: sun
+         event: 'sunrise'
+         offset: '03:00:00' 
+       - platform: state
+         entity_id: group.all_devices
+         state: 'home'
+
+  condition: use_trigger_values
+
+  action:
+    service: light.turn_off
+    entity_id: light.office_white
+
+automation 5:
+  alias: 'Nightlight'
+
+  trigger:
+       - platform: state
+         entity_id: group.all_devices
+         state: 'home'
+       - platform: time
+         after: '20:00'
+         before: '02:00'
+         weekday:
+           - fri
+           - sat
+
+  condition: use_trigger_values
+
+  action:
+    service: light.turn_on
+    entity_id: light.living_room
+    data:
+      brightness: 50
+      rgb_color: [255, 0, 0]
+
+automation 6:
+  alias: "Set dim level daytime"
+  trigger:
+  - platform: time
+    after: "07:00"   #instantaneously at 7am only, not 'after'
+  - platform: state   #implicit OR betwen the two conditions
+    entity_id: light.office_white
+    from: 'off'
+    to: 'on'
+
+  condition:
+  - platform: state
+    entity_id: light.office_white
+    state: 'on'
+  - platform: time    #implicit AND
+    after: "07:00"
+    before: "19:59"
+
+  action:
+    service: light.turn_on
+    entity_id: light.office_white
+    data:
+      brightness: 255
