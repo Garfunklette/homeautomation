@@ -20,5 +20,15 @@
 # chromecast pause, lights are off, and it is evening
 
 alias: 'Turn lights up when ChromeCast pauses or stops, evening'
-trigger:
-  
+trigger: 
+  platform: state
+  entity_id: media_player.living_room
+  from: playing
+condition: 
+  -platform: sun
+  state: below_horizon
+  -platform: time
+  before: '21:00'
+action:
+  service: homeassistant.turn_on
+  entity_id: script.chrome_pause_stop_lights_evening
