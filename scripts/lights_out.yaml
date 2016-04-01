@@ -1,0 +1,11 @@
+alias: 'Turn off all lights when no devices home'
+trigger:
+  platform: state
+  entity_id: group.all_devices
+  state: not_home
+condition: use_trigger_values
+action:
+  service: light.turn_off
+    - entity_id: light.living_room
+    - entity_id: group.bedroom
+    #- entity_id: group.office
