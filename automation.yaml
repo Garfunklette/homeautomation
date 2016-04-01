@@ -23,8 +23,8 @@
 - !include automation/rainy_day.yaml
 - !include automation/rain_is_over.yaml
 
-#- !include automation/office_light_off.yaml
-#- !include automation/office_light_on.yaml
+- !include automation/office_light_off.yaml
+- !include automation/office_light_on.yaml
 
 #- !include automation/lights_off.yaml
 
