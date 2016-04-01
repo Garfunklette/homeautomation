@@ -26,7 +26,7 @@
 - !include automation/office_light_off.yaml
 - !include automation/office_light_on.yaml
 
-#- !include automation/lights_off.yaml
+- !include automation/lights_off.yaml
 
 
 ###  Works in progress  ###
