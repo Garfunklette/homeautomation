@@ -1,0 +1,18 @@
+alias: 'Nightlight'
+trigger:
+  - platform: state
+  entity_id: group.all_devices
+  state: 'home'
+  - platform: time
+  after: '20:00'
+  before: '02:00'
+  weekday:
+    - fri
+    - sat
+condition: use_trigger_values
+action:
+  service: light.turn_on
+  entity_id: light.living_room
+  data:
+    brightness: 50
+    rgb_color: [255, 0, 0]
