@@ -1,1 +1,12 @@
-
+alias: 'Turn lights off when ChromeCast starts'
+trigger: 
+  platform: state
+  entity_id: media_player.living_room
+  to: playing
+condition:
+  -platform: state
+  entity_id: light.living_room
+  state: 'on'
+action:
+  service: homeassistant.turn_on
+  entity_id: script.chrome_play_dim_lights
