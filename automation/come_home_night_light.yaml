@@ -1,4 +1,4 @@
-alias: 'Nightlight'
+alias: 'Come home night light'
 trigger:
   - platform: state
   entity_id: group.all_devices
