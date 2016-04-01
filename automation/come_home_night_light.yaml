@@ -1,15 +1,15 @@
 alias: 'Come home night light'
 trigger:
-  - platform: state
+  platform: state
   entity_id: group.all_devices
   state: 'home'
-  - platform: time
+condition:
+  platform: time
   after: '20:00'
   before: '02:00'
   weekday:
     - fri
     - sat
-condition: use_trigger_values
 action:
   service: light.turn_on
   entity_id: light.living_room
