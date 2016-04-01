@@ -1,4 +1,4 @@
-# wants: 
+###  Wants  ###
 # homecoming living room nightlight
 # Theater lighting (drop to 10% when Chromecast plays, transition to off.  Raise to half when Chromecast paused, transition to
 #    75% when night, 100% when not night)
@@ -9,21 +9,34 @@
 # timed lights when on vacation
 
 # Example:
-# - !include automation/sleep.yaml
+##- !include automation/sleep.yaml
+
+
+###  Lighting Automations  ###
 
 - !include automation/come_home_night_light.yaml
+
 - !include automation/chrome_theater_on.yaml
 - !include automation/chrome_theater_off_evening.yaml
 - !include automation/chrome_theater_off_night.yaml
-#- !include automation/work_night.yaml
+
 - !include automation/rainy_day.yaml
 - !include automation/rain_is_over.yaml
-- !include automation/dim_day.yaml
-- !include automation/office_light_off.yaml
-- !include automation/office_light_on.yaml
+
+#- !include automation/office_light_off.yaml
+#- !include automation/office_light_on.yaml
+
+#- !include automation/lights_off.yaml
+
+
+###  Works in progress  ###
+
+#- !include automation/dim_day.yaml
+
+#- !include automation/work_night.yaml
 #- !include automation/weather_clear.yaml
 #- !include automation/weather_cold.yaml
 #- !include automation/weather_rain.yaml
 #- !include automation/weather_snow.yaml
-- !include automation/lights_off.yaml
+
 #- !include automation/vacation_lights.yaml
