@@ -1,0 +1,12 @@
+alias: 'Rain is over'
+trigger:
+  - platform: state
+    entity_id: sensor.weather_precip
+    state: 'None'
+  - platform: sun
+    event: 'sunset'
+    offset: '-01:00:00'
+condition: use_trigger_values
+action:
+  service: light.turn_off
+  entity_id: light.living_room
