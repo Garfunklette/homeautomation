@@ -10,4 +10,4 @@ condition:
   before: '21:00'
 action:
   service: scene.turn_on
-  entity_id: scene.living_room_mid_high_lights
+  entity_id: scene.living_room_high_lights
