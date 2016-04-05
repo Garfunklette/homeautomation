@@ -3,3 +3,4 @@ name: living_room_mid_high_lights
       light.Living_room:
         state: on
         brightness: 180
+        transition: 5

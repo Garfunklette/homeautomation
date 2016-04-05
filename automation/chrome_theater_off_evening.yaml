@@ -1,25 +1,4 @@
-#group:
-#  living_room:
-#    - light.table_lamp
-#    - light.ceiling
-
-#automation:
-#  alias: Turn on light when sun sets
-#  trigger:
-#    platform: sun
-#    event: sunset
-#    offset: "-01:00:00"
-#  condition:
-#    platform: state
-#    entity_id: group.all_devices
-#    state: home
-#  action:
-#    service: light.turn_on
-#    entity_id: group.living_room
-
-# chromecast pause, lights are off, and it is evening
-
-alias: 'Turn lights up when ChromeCast pauses or stops, evening'
+alias: 'chromecast_off_evening'
 trigger: 
   platform: state
   entity_id: media_player.living_room
@@ -30,5 +9,5 @@ condition:
   -platform: time
   before: '21:00'
 action:
-  service: homeassistant.turn_on
-  entity_id: script.chrome_pause_stop_lights_evening
+  service: scene.turn_on
+  entity_id: scene.living_room_high_lights

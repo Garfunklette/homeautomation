@@ -1,4 +1,4 @@
-alias: 'Turn lights up when ChromeCast pauses or stops, night'
+alias: 'chromecast_off_night'
 trigger: 
   platform: state
   entity_id: media_player.living_room
@@ -7,5 +7,5 @@ condition:
   -platform: time
   after: '21:00'
 action:
-  service: homeassistant.turn_on
-  entity_id: script.chrome_pause_stop_lights_night
+  service: scene.turn_on
+  entity_id: scene.living_room_mid_high_lights
