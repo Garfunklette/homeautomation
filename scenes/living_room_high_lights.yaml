@@ -1,6 +1,6 @@
 name: living_room_high_lights
     entities:
-      light.Living_room:
+      light.living_room:
         state: on
         brightness: 240
         transition: 5
