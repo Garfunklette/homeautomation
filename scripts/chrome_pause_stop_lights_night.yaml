@@ -7,7 +7,7 @@ chrome_pause_stop_lights_evening:
       data:
         entity_id: scene.living_room_midlights
     - delay:
-        minutes: 2
+        seconds: 15
     - alias: 'Living room lights to mid_high'
       service: scene.turn_on
       data:
