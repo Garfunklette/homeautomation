@@ -4,7 +4,7 @@ trigger:
   entity_id: media_player.living_room
   from: playing
 condition: 
-  -platform: time
+  platform: time
   after: '21:00'
 action:
   service: scene.turn_on
