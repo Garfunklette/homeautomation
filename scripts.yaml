@@ -1,4 +1,4 @@
-- !include: scripts/chrome_pause_stop_lights_evening.yaml
-- !include: scripts/chrome_pause_stop_lights_night.yaml
-- !include: scripts/chrome_play_dim_lights.yaml
-- !include: scripts/lights_out.yaml
+chrome_pause_stop_lights_evening: !include scripts/chrome_pause_stop_lights_evening.yaml
+chrome_pause_stop_lights_night: !include scripts/chrome_pause_stop_lights_night.yaml
+chrome_play_dim_lights: !include scripts/chrome_play_dim_lights.yaml
+lights_out: !include scripts/lights_out.yaml
