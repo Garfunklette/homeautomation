@@ -4,10 +4,10 @@ trigger:
   entity_id: media_player.living_room
   from: playing
 condition: 
-  -platform: sun
-  state: below_horizon
-  -platform: time
-  before: '21:00'
+  - platform: sun
+    state: below_horizon
+  - platform: time
+    before: '21:00'
 action:
   service: scene.turn_on
   entity_id: scene.living_room_high_lights
