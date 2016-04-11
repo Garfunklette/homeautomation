@@ -1,6 +1,6 @@
 name: living_room_low_lights
-    entities:
-      light.living_room:
-        state: on
-        brightness: 25
-        transition: 5
+  entities:
+    light.living_room:
+      state: on
+      brightness: 25
+      transition: 5
