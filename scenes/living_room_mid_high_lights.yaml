@@ -1,6 +1,6 @@
 name: living_room_mid_high_lights
-    entities:
-      light.living_room:
-        state: on
-        brightness: 180
-        transition: 5
+  entities:
+    light.living_room:
+      state: on
+      brightness: 180
+      transition: 5
