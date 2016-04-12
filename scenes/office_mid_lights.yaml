@@ -1,0 +1,14 @@
+- name: office_mid_lights
+  entities:
+    light.office_top:
+      state: on
+      brightness: 120
+      transition: 2
+    light.office_mid:
+      state: on
+      brightness: 120
+      transition: 2
+    light.office_bottom:
+      state: on
+      brightness: 120
+      transition: 2

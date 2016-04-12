@@ -40,3 +40,8 @@ living_room_scenes:
     - scene.living_room_mid_high_lights
     - scene.living_room_high_lights
     
+office_scenes:
+  name: 'Office Scenes'
+  entities:
+    - scene.office_mid_lights
+    - scene.office_high_lights
