@@ -31,3 +31,12 @@ Extended weather:
   - sensor.weather_precip
   - sensor.weather_precip_probability
   - sensor.weather_wind_speed
+
+living_room_scenes:
+  name: 'Living Room Scenes'
+  entities:
+    - scene.living_room_low_lights
+    - scene.living_room_mid_lights
+    - scene.living_room_mid_high_lights
+    - scene.living_room_high_lights
+    
