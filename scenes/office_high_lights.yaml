@@ -3,9 +3,12 @@
     light.office_top:
       state: on
       brightness: 240
+      transition: 2
     light.office_mid:
       state: on
       brightness: 240
+      transition: 2
     light.office_bottom:
       state: on
       brightness: 240
+      transition: 2
