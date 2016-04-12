@@ -1,11 +1,11 @@
 - name: office_high_lights
   entities:
-    - light.office_top:
+    light.office_top:
       state: on
       brightness: 240
-    - light.office_mid:
+    light.office_mid:
       state: on
       brightness: 240
-    - light.office_bottom:
+    light.office_bottom:
       state: on
       brightness: 240
