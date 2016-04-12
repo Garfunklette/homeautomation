@@ -1,1 +1,5 @@
-
+- name: office_mid_lights
+  entities:
+    - light.office_top:
+      state: on
+      brightness: 120
