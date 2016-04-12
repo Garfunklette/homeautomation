@@ -1,4 +1,4 @@
-name: living_room_mid_high_lights
+- name: living_room_mid_high_lights
   entities:
     light.living_room:
       state: on
