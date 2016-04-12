@@ -3,3 +3,9 @@
     - light.office_top:
       state: on
       brightness: 120
+    - light.office_mid:
+      state: on
+      brightness: 120
+    - light.office_bottom:
+      state: on
+      brightness: 120
