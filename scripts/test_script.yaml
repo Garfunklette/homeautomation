@@ -1,0 +1,21 @@
+alias: Office Light blni
+sequence:
+  - event: LOGBOOK_ENTRY
+    event_data:
+      name: Testing
+      message: Office light should turn off then on again
+      entity_id: light.office_mid
+      domain: light
+  - alias: Office light off
+    service: light.turn_off
+    data:
+      entity_id: light.office_mid
+
+  - delay:
+      # supports seconds, milliseconds, minutes, hours, etc.
+      seconds: 5
+  - alias: Office light on
+    service: light.turn_on
+    data:
+      entity_id: light.office_mid
+      brightness: 240
