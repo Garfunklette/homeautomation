@@ -1,4 +1,4 @@
-alias: Office Light blni
+alias: Office Light blink
 sequence:
   - event: LOGBOOK_ENTRY
     event_data:
