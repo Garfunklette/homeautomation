@@ -4,3 +4,9 @@ group: !include groups.yaml
 scene: !include scenes.yaml
 automation: !include automation.yaml
 script: !include scripts.yaml
+
+input_boolean:
+  test:
+  name: Test Switch
+  initial: off
+  icon: mdi:toggle-switch
