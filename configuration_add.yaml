@@ -7,5 +7,6 @@ script: !include scripts.yaml
 
 input_boolean:
   test:
+  name: Test Switch
   initial: off
   icon: mdi:toggle-switch
