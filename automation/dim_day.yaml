@@ -1,0 +1,22 @@
+alias: "Set dim level daytime"
+trigger:
+  - platform: time
+    after: "07:00"   #instantaneously at 7am only, not 'after'
+  - platform: state   #implicit OR betwen the two conditions
+    entity_id: light.office_white
+    from: 'off'
+    to: 'on'
+
+condition:
+  - platform: state
+    entity_id: light.office_white
+    state: 'on'
+  - platform: time    #implicit AND
+    after: "07:00"
+    before: "19:59"
+
+  action:
+    service: light.turn_on
+    entity_id: light.office_white
+    data:
+      brightness: 255

@@ -1,0 +1,9 @@
+alias: 'All lights off'
+trigger:
+  platform: state
+  entity_id: group.all_devices
+  state: not_home
+condition: use_trigger_values
+action:
+  service: home_assistant.turn_on
+  entity_id: script.lights_out

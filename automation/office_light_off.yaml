@@ -1,0 +1,12 @@
+alias: 'Office Light off'
+trigger:
+  platform: sun
+  event: 'sunrise'
+  offset: '03:00:00' 
+condition:
+  platform: state
+  entity_id: group.all_devices
+  state: 'home'
+action:
+  service: light.turn_off
+  entity_id: light.office_white
