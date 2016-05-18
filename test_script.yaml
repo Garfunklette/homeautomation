@@ -1,0 +1,1 @@
+test_script: !include scripts\test.yaml

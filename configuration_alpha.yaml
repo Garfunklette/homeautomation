@@ -14,8 +14,8 @@ homeassistant:
 
 group: !include groups.yaml
 scene: !include scenes.yaml
-script: !include scripts.yaml
-
+# script: !include scripts.yaml
+script: !include test_script.yaml
 
 light:
   platform: hue
