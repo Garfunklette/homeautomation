@@ -1,0 +1,10 @@
+alias: 'steam_game_on'
+trigger:
+  platform: template
+  value_template: '{% if states.sensor.steam_account1.attributes.Game != "None" %}' 
+condition: 
+  - platform: sun
+    state: below_horizon
+action:
+  service: scene.turn_on
+  entity_id: scene.office_low_lights
